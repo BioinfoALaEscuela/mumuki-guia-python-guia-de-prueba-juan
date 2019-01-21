@@ -1,0 +1,9 @@
+---
+name: Guía de Prueba Juan
+locale: es
+type: learning
+beta: false
+language: python
+id_format: "%05d"
+order: []
+private: false
