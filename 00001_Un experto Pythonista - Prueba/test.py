@@ -6,6 +6,7 @@ class Test(unittest.TestCase):
       output
       output_exists = True
       print('output exists!')
+      print('output is:',output)
     except NameError:
       output_exists = False
       print('output does not exist!')
