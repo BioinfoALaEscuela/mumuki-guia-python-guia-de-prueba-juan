@@ -1,4 +1,7 @@
+
 class Test(unittest.TestCase):
 
   def test_description_example(self):
-    self.assertTrue(result == 'Hola Bioinformatica!!')
+    self.assertTrue(fout == 'Hola Bioinformatica!!')
+    sys.stdout = saved
+    fout.close()

@@ -11,6 +11,4 @@ import sys
 saved = sys.stdout
 fout = file('out.log', 'w')
 sys.stdout = writer(sys.stdout, fout)
-print "There you go."
-sys.stdout = saved
-fout.close()
+
