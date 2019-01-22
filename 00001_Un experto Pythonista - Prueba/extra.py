@@ -1,14 +1,6 @@
-class writer :
-    def __init__(self, *writers) :
-        self.writers = writers
+# redirect sys.stdout to a buffer
+import sys, io
+stdout = sys.stdout
+sys.stdout = io.StringIO()
 
-    def write(self, text) :
-        for w in self.writers :
-            w.write(text)
-
-import sys
-
-saved = sys.stdout
-fout = file('out.log', 'w')
-sys.stdout = writer(sys.stdout, fout)
 
