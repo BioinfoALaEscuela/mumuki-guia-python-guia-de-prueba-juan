@@ -17,6 +17,6 @@ def print(*args, **kwargs):
     # is probably a bad idea.
     # Instead consider testing if custom argument keywords
     # are present in kwargs
-    result = *args + **kwargs
+    result = args + kwargs
     __builtin__.print('My overridden print() function!')
     return __builtin__.print(*args, **kwargs)
