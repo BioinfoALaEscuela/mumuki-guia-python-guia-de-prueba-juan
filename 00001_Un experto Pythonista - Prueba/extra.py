@@ -1,17 +1,16 @@
-try:
-    import __builtin__
-except ImportError:
-    # Python 3
-    import builtins as __builtin__
+class writer :
+    def __init__(self, *writers) :
+        self.writers = writers
 
-global result
+    def write(self, text) :
+        for w in self.writers :
+            w.write(text)
 
-def print(*args, **kwargs):
-    """My custom print() function."""
-    # Adding new arguments to the print function signature 
-    # is probably a bad idea.
-    # Instead consider testing if custom argument keywords
-    # are present in kwargs
-    result = args + kwargs
-    __builtin__.print('My overridden print() function!')
-    return __builtin__.print(*args, **kwargs)
+import sys
+
+saved = sys.stdout
+fout = file('out.log', 'w')
+sys.stdout = writer(sys.stdout, fout)
+print "There you go."
+sys.stdout = saved
+fout.close()
