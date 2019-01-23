@@ -1,7 +1,8 @@
+sys.stdout = sys.__stdout__       # Reset redirect. 
+    
 class Test(unittest.TestCase):
   def test_description_example(self):
-    output = sys.stdout.getvalue()
-    sys.stdout = stdout
+    print('Captured', capturedOutput.getvalue())
     try:
       output
       output_exists = True
