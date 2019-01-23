@@ -13,4 +13,4 @@ class Test(unittest.TestCase):
       print('output does not exist!')
     if output_exists:
       print(output)
-      self.assertTrue(output == 'Hola Bioinformatica!!')
+    self.assertTrue(1 == 2)
