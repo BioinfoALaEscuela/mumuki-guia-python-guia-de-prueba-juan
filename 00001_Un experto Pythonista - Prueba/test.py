@@ -1,14 +1,17 @@
-# redirect sys.stdout to a buffer
-import sys, io
-stdout = sys.stdout
-sys.stdout = io.StringIO()
+import sys
+from cStringIO import StringIO
 
-# call module that calls print()
+# setup the environment
+backup = sys.stdout
+
+# ####
+sys.stdout = StringIO()     # capture output
 /*...content...*/
+output = sys.stdout.getvalue() # release output
+# ####
 
-# get output and restore sys.stdout
-output = sys.stdout.getvalue()
-sys.stdout = stdout
+sys.stdout.close()  # close the stream 
+sys.stdout = backup # restore original stdout
 
 class Test(unittest.TestCase):
   def test_description_example(self):
