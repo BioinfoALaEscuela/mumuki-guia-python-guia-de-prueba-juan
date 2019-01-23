@@ -1,4 +1,3 @@
-"
 class Test(unittest.TestCase):
   def test_description_example(self):
     try:
