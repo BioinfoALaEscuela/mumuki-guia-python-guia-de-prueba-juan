@@ -17,5 +17,5 @@ sys.stdout = backup # restore original stdout
 
 class Test(unittest.TestCase):
   def test_description_example(self):
-    self.assertTrue(output == 'Hola Bioinformatica!!', 'Tu solución no está bien. La salida obtenida es %s'.format(output))
+    self.assertTrue(output == 'Hola Bioinformatica!!', 'Tu solucion no esta bien. La salida obtenida es %s'.format(output))
       
