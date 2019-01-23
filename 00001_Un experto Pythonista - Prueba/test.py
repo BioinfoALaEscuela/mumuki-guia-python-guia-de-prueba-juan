@@ -1,4 +1,14 @@
-print(type(/*...content...*/))
+# redirect sys.stdout to a buffer
+import sys, io
+stdout = sys.stdout
+sys.stdout = io.StringIO()
+
+# call module that calls print()
+/*...content...*/
+
+# get output and restore sys.stdout
+output = sys.stdout.getvalue()
+sys.stdout = stdout
 
 class Test(unittest.TestCase):
   def test_description_example(self):
