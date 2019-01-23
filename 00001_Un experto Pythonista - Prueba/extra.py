@@ -1,1 +1,1 @@
-output = /*...content...*/
+output = string(/*...content...*/)
