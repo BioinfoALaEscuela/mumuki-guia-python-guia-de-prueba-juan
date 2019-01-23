@@ -9,7 +9,7 @@ sys.stdout = StringIO()     # capture output
 /*...content...*/
 output = sys.stdout.getvalue() # release output
 # ####
-output.strip()
+output = output.strip()
 sys.stdout.close()  # close the stream 
 sys.stdout = backup # restore original stdout
 
