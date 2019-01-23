@@ -10,7 +10,7 @@ sys.stdout = StringIO()     # capturo el output
 
 output = sys.stdout.getvalue() # guardo lo que salio en consola, o sea en stdout, en la variable output
 
-output = output.strip()    # aca le saco caracteres extranos como el \n de nueva linea que se agrega al capturar el stdout
+output = output.strip()    # aca le saco caracteres extranos como el de nueva linea que se agrega al capturar el stdout
 sys.stdout.close()  # cierro la captura
 sys.stdout = backup # restauro el stdout original
 
